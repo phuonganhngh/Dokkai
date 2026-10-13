@@ -77,3 +77,13 @@ HTML trên GitHub có thể hiện mã nguồn; nên dùng gói ZIP để mở b
 Lời giải và tiêu đề chủ đề là phần biên soạn; nghĩa bổ sung được phân biệt với nội dung có sẵn trong nguồn.
 
 <!-- DOKKAI_GENERATED_END -->
+
+
+<!-- DOKKAI_PAGES_SETUP -->
+## Mở bài trực tiếp trong trình duyệt
+
+Đã có trang chủ `index.html` liên kết đủ 31 đề. Để kích hoạt GitHub Pages lần đầu, chủ kho mở **Settings → Pages → Build and deployment**, chọn **Deploy from a branch**, nhánh **main**, thư mục **/ (root)** rồi bấm **Save**.
+
+Sau khi GitHub báo triển khai thành công, trang học sẽ ở **https://phuonganhngh.github.io/Dokkai/**. Bấm **Học ngay** để mở HTML tương tác; không cần tải ZIP. Bản ZIP vẫn dùng để học khi không có mạng.
+
+Việc thêm trang chủ chưa tự bật GitHub Pages; cần hoàn tất cài đặt trên trước khi dùng địa chỉ này.
