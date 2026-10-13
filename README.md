@@ -1,7 +1,7 @@
 <!-- DOKKAI_GENERATED_START -->
 # JLPT N2 読解 · 2010–2025
 
-Đã có **14/31 đề · 293 câu Dokkai**. Các kỳ còn lại đang được biên soạn và kiểm tra.
+Đã hoàn thành toàn bộ **31 đề · 641 câu Dokkai**.
 
 Tiêu đề từng bài và nguyên văn đề/câu hỏi dùng tiếng Nhật. Nghĩa từ và lời giải dùng tiếng Việt. Mỗi bài có từ vựng đối chiếu Riki/DungMori, đáp án, câu làm căn cứ và mẹo Bí kíp N1/N2 khi áp dụng được, kèm nguồn.
 
@@ -17,6 +17,16 @@ Tiêu đề từng bài và nguyên văn đề/câu hỏi dùng tiếng Nhật. 
 | 2013 | 2 | 42 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2013.zip) |
 | 2014 | 2 | 42 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2014.zip) |
 | 2015 | 2 | 42 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2015.zip) |
+| 2016 | 2 | 42 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2016.zip) |
+| 2017 | 2 | 42 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2017.zip) |
+| 2018 | 2 | 42 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2018.zip) |
+| 2019 | 2 | 41 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2019.zip) |
+| 2020 | 1 | 21 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2020.zip) |
+| 2021 | 2 | 41 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2021.zip) |
+| 2022 | 2 | 40 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2022.zip) |
+| 2023 | 2 | 40 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2023.zip) |
+| 2024 | 2 | 40 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2024.zip) |
+| 2025 | 2 | 40 | [Tải gói ZIP](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/packages/Dokkai-N2-2025.zip) |
 
 ## Tệp từng kỳ
 
@@ -37,6 +47,23 @@ HTML trên GitHub có thể hiện mã nguồn; nên dùng gói ZIP để mở b
 | 07/2015 | [Tệp HTML](exams/Dokkai-N2-2015-07.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2015-07.pdf) |
 | 12/2015 | [Tệp HTML](exams/Dokkai-N2-2015-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2015-12.pdf) |
 | 07/2016 | [Tệp HTML](exams/Dokkai-N2-2016-07.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2016-07.pdf) |
+| 12/2016 | [Tệp HTML](exams/Dokkai-N2-2016-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2016-12.pdf) |
+| 07/2017 | [Tệp HTML](exams/Dokkai-N2-2017-07.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2017-07.pdf) |
+| 12/2017 | [Tệp HTML](exams/Dokkai-N2-2017-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2017-12.pdf) |
+| 07/2018 | [Tệp HTML](exams/Dokkai-N2-2018-07.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2018-07.pdf) |
+| 12/2018 | [Tệp HTML](exams/Dokkai-N2-2018-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2018-12.pdf) |
+| 07/2019 | [Tệp HTML](exams/Dokkai-N2-2019-07.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2019-07.pdf) |
+| 12/2019 | [Tệp HTML](exams/Dokkai-N2-2019-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2019-12.pdf) |
+| 12/2020 | [Tệp HTML](exams/Dokkai-N2-2020-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2020-12.pdf) |
+| 07/2021 | [Tệp HTML](exams/Dokkai-N2-2021-07.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2021-07.pdf) |
+| 12/2021 | [Tệp HTML](exams/Dokkai-N2-2021-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2021-12.pdf) |
+| 07/2022 | [Tệp HTML](exams/Dokkai-N2-2022-07.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2022-07.pdf) |
+| 12/2022 | [Tệp HTML](exams/Dokkai-N2-2022-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2022-12.pdf) |
+| 07/2023 | [Tệp HTML](exams/Dokkai-N2-2023-07.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2023-07.pdf) |
+| 12/2023 | [Tệp HTML](exams/Dokkai-N2-2023-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2023-12.pdf) |
+| 07/2024 | [Tệp HTML](exams/Dokkai-N2-2024-07.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2024-07.pdf) |
+| 12/2024 | [Tệp HTML](exams/Dokkai-N2-2024-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2024-12.pdf) |
+| 07/2025 | [Tệp HTML](exams/Dokkai-N2-2025-07.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2025-07.pdf) |
 | 12/2025 | [Tệp HTML](exams/Dokkai-N2-2025-12.html) | [PDF](https://github.com/phuonganhngh/Dokkai/raw/refs/heads/main/exams/Dokkai-N2-2025-12.pdf) |
 
 ## Nguồn và cách đối chiếu
