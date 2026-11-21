@@ -22,10 +22,6 @@ th,td{border:1px solid var(--line);padding:12px;vertical-align:top;text-align:le
 thead th{background:#e5eee8}
 tbody th{font-weight:400}
 tbody{scroll-margin-top:14px}
-.structure-table col:nth-child(1){width:14%}
-.structure-table col:nth-child(2),.structure-table col:nth-child(3){width:18%}
-.structure-table col:nth-child(4),.structure-table col:nth-child(5){width:12%}
-.structure-table col:nth-child(6){width:26%}
 code{color:#124d45;background:#eef3ee;font:inherit}
 @media(max-width:1110px){
   table,tbody{display:block;background:transparent}
@@ -82,22 +78,212 @@ code{color:#124d45;background:#eef3ee;font:inherit}
   .question-theory{font-size:8.5pt;line-height:1.4;padding:2mm;break-inside:avoid;break-after:avoid}
 }
 #danh-sach-de,.tips-section,.question-type{scroll-margin-top:68px}
+.structure-example { max-width: 1000px; margin: 0 0 22px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+.structure-heading { padding: 10px 14px; background: #e5eee8; color: var(--ink); border-radius: 8px 8px 0 0; }
+.structure-heading h3 { margin: 0 0 2px; font-size: 17px; }
+.structure-heading a { font-size: 13px; }
+.structure-segment + .structure-segment { border-top: 1px solid var(--line); }
+.structure-excerpt { padding: 10px 14px; margin: 0; font: 16px/1.8 "Hiragino Sans", "Yu Gothic", "Noto Sans CJK JP", sans-serif; overflow-wrap: anywhere; }
+.structure-excerpt mark { background: #ffeca0; color: inherit; }
+.structure-note { margin: 0; padding: 6px 12px; border-left: 3px solid #c59b34; background: #fff8de; font-size: 14px; }
+.structure-note strong { margin-right: .35em; }
+.structure-example > .structure-segment:last-child .structure-note { border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; }
+@media print {
+  .structure-example { max-width: none; margin: 0 0 3mm; }
+  .structure-heading { padding: 1mm 2mm; break-after: avoid; }
+  .structure-heading h3 { font-size: 10pt; }
+  .structure-heading a, .structure-note { font-size: 8.5pt; }
+  .structure-excerpt { font-size: 9pt; line-height: 1.45; padding: 1mm 2mm; }
+  .structure-note { padding: 1mm 2mm; }
+  .structure-segment { break-inside: avoid; }
+}
 </style>
 </head>
 <body>
 <header><div><p>JLPT N2 · 読解</p><h1>Bí kíp Dokkai</h1></div></header>
 <main>
-<nav class="site-tabs" aria-label="Dokkai"><a href="./">HOME</a><a href="bi-kip.html" aria-current="page">Bí kíp</a></nav>
+<nav class="site-tabs" aria-label="Dokkai"><a href="https://phuonganhngh.github.io/Dokkai/">HOME</a><a href="bi-kip.html" aria-current="page">Bí kíp</a></nav>
 <nav class="group-links" aria-label="Nội dung Bí kíp"><a href="#cau-truc">Cấu trúc bài đọc</a><a href="#dang-cau-hoi">Dạng câu hỏi</a></nav>
 <section class="tips-section" id="cau-truc">
 <h2>Cấu trúc bài đọc</h2>
-<table class="structure-table" role="table"><colgroup><col><col><col><col><col><col></colgroup><thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Dạng</th><th scope="col" role="columnheader">Cách triển khai</th><th scope="col" role="columnheader">Vùng cần chú ý</th><th scope="col" role="columnheader">Dạng</th><th scope="col" role="columnheader">Cách triển khai</th><th scope="col" role="columnheader">Điểm quan trọng</th></tr></thead><tbody role="rowgroup"><tr role="row"><th scope="row" role="rowheader">Diễn dịch</th><td role="cell" data-heading="Cách triển khai">Luận điểm → lý do → ví dụ → cách thực hiện</td><td role="cell" data-heading="Vùng cần chú ý">Câu đầu đưa định hướng; phần sau bổ sung điều kiện và phạm vi.</td><td role="cell" data-heading="Dạng">Diễn dịch kết hợp phản biện: T12-2015, bài 10<br><a href="exams/Dokkai-N2-2015-12.html#bai-10">PDF tr. 14–15</a></td><td role="cell" data-heading="Cách triển khai">Đề xuất cách đọc → giải thích lợi ích → dự đoán phản đối → thừa nhận một phần → điều chỉnh thứ tự ưu tiên → khẳng<br>định lại đề xuất.</td><td role="cell" data-heading="Điểm quan trọng">Tác giả <strong>không rút lại lời khuyên ban đầu</strong>. Người mới cần đạt trình độ được người khác đọc <strong>trước</strong>, rồi mới tính chuyện thể hiện cá tính.</td></tr>
-<tr role="row"><th scope="row" role="rowheader">Quy nạp</th><td role="cell" data-heading="Cách triển khai">Trải nghiệm/hiện tượng → suy xét → nhận xét khái quát</td><td role="cell" data-heading="Vùng cần chú ý">Đoạn chuyển từ chuyện riêng sang nhận xét chung.</td><td role="cell" data-heading="Dạng">Quy nạp từ trải nghiệm cá nhân: T7-2010, bài 8<br><a href="exams/Dokkai-N2-2010-07.html#bai-8">Câu 66–68 · PDF tr. 15–16</a></td><td role="cell" data-heading="Cách triển khai">Tâm sự về việc chuyển nghề → tưởng tượng công việc khác → nhận xét về lựa chọn nghề nghiệp → khái quát mong muốn tìm công việc phù hợp của con người.</td><td role="cell" data-heading="Điểm quan trọng">Chuyện chuyển nghề chỉ là điểm xuất phát. Ý chính rộng hơn: trong môi trường có nhiều lựa chọn, con người vẫn muốn tìm công việc phù hợp với mình.</td></tr>
-<tr role="row"><th scope="row" role="rowheader">Tổng–phân–hợp</th><td role="cell" data-heading="Cách triển khai">Nêu quan điểm → phân tích, phản biện → tổng hợp thành kết luận rõ hơn</td><td role="cell" data-heading="Vùng cần chú ý">Đối chiếu luận điểm đầu và kết luận cuối; nhận ra phần ý nghĩa được bổ sung.</td><td role="cell" data-heading="Dạng">Tổng–phân–hợp kết hợp phản biện: T7-2019, bài 10<br><a href="exams/Dokkai-N2-2019-07.html#bai-10">Câu 69–71 · PDF tr. 18–19</a></td><td role="cell" data-heading="Cách triển khai">Đề xuất giao việc hơi vượt năng lực → phê bình việc can thiệp quá nhiều → ví dụ làm tài liệu thuyết trình → đề xuất cách giao việc → kết luận vai trò của cấp trên.</td><td role="cell" data-heading="Điểm quan trọng">Đầu bài nói về <strong>loại công việc nên giao</strong>; cuối bài nâng thành <strong>vai trò của cấp trên: tạo hoàn cảnh để cấp dưới trưởng thành qua công việc</strong>.</td></tr>
-<tr role="row"><th scope="row" role="rowheader">Phễu: rộng <strong>→</strong><strong> hẹp</strong></th><td role="cell" data-heading="Cách triển khai">Chủ đề rộng → phân biệt các khía cạnh → tập trung vào một vấn đề cụ thể</td><td role="cell" data-heading="Vùng cần chú ý">Theo dõi phạm vi chủ đề đang thu hẹp; xác định câu hỏi thuộc tầng nào.</td><td role="cell" data-heading="Dạng">Triển khai thu hẹp dần chủ đề: T12-2011, bài 10<br><a href="exams/Dokkai-N2-2011-12.html#bai-10">PDF tr. 17–18</a></td><td role="cell" data-heading="Cách triển khai">Cách đọc tiểu thuyết → phân biệt tiểu thuyết và bình luận → lý do đọc bình luận → hai nghĩa của 教養 → loại 教養 cần trong thời đại hiện nay.</td><td role="cell" data-heading="Điểm quan trọng">Khi hỏi <strong>第二の教養</strong>, phải tìm phần phân biệt hai nghĩa của 教養. Nội dung về đọc tiểu thuyết ở đầu bài <strong>chưa trả lời đúng phạm vi câu hỏi</strong>.</td></tr>
-<tr role="row"><th scope="row" role="rowheader">Lật lại quan niệm thông thường</th><td role="cell" data-heading="Cách triển khai">Người ta thường nghĩ A → chỉ ra giới hạn của A → đưa cách nhìn B → giải thích</td><td role="cell" data-heading="Vùng cần chú ý">Chỗ chuyển từ quan niệm thông thường sang đánh giá của tác giả; mức độ bác bỏ A.</td><td role="cell" data-heading="Dạng">Đánh giá lại vai trò của lo lắng: T12-2024, bài 6<br><a href="exams/Dokkai-N2-2024-12.html#bai-6">Câu 57–58 · PDF tr. 17–18</a></td><td role="cell" data-heading="Cách triển khai">Mong muốn luôn bình tĩnh ở môi trường mới → chỉ ra không lo chưa chắc tốt → giải thích lo lắng giúp chuẩn bị, căng thẳng giúp tập trung → khuyên tập trung vào việc hiện tại.</td><td role="cell" data-heading="Điểm quan trọng">Tác giả <strong>không khẳng định mọi lo lắng đều tốt</strong>. Bài<br> làm rõ chức năng bảo vệ của lo lắng và cách ứng xử khi có cảm xúc ấy.</td></tr>
-<tr role="row"><th scope="row" role="rowheader">Vấn đề <strong>→</strong><strong> cơ chế </strong><strong>→</strong><strong> giải pháp</strong></th><td role="cell" data-heading="Cách triển khai">Hiện tượng X → nguyên nhân Y → hệ quả Z → biện pháp W</td><td role="cell" data-heading="Vùng cần chú ý">Tách nguyên nhân, kết quả và giải pháp; theo dõi từng mắt xích.</td><td role="cell" data-heading="Dạng">Giải thích cơ chế rồi đưa lời khuyên: T12-2013, bài 8<br><a href="exams/Dokkai-N2-2013-12.html#bai-8">Câu 66–68 · PDF tr. 13</a></td><td role="cell" data-heading="Cách triển khai">Vào phòng lạnh để ngừng đổ mồ hôi → tuyến mồ hôi giảm hoạt động → các tuyến còn lại chịu tải lớn → mồ hôi khó bay hơi → điều hòa thân nhiệt kém → khuyên không cố ngăn mồ hôi khi cơ thể cần tiết.</td><td role="cell" data-heading="Điểm quan trọng">Ba câu hỏi khai thác <strong>ba mắt xích khác nhau: nguyên nhân – hệ quả – cách xử lý</strong>. Một thông tin đúng trong bài vẫn có thể trả lời sai câu hỏi nếu chọn nhầm mắt<br> xích.</td></tr>
-<tr role="row"><th scope="row" role="rowheader">So sánh/đối chiếu</th><td role="cell" data-heading="Cách triển khai">Đặt A và B cạnh nhau → <br>xác định điểm chung/khác theo một tiêu chí → đánh giá</td><td role="cell" data-heading="Vùng cần chú ý">Đối tượng và tiêu chí được hỏi; phân biệt kết luận chung với lý do riêng.</td><td role="cell" data-heading="Dạng">A/B cùng kết luận, khác lý do: T7-2017, bài 9<br><a href="exams/Dokkai-N2-2017-07.html#bai-9">Câu 69–70 · PDF tr. 13</a></td><td role="cell" data-heading="Cách triển khai">Cả hai nêu xu hướng xem tại nhà → cùng khẳng định sức hấp dẫn của xem trực tiếp → A nhấn mạnh tự chọn góc nhìn; B nhấn mạnh sự hòa làm một giữa diễn viên và khán giả.</td><td role="cell" data-heading="Điểm quan trọng">Cùng thích xem trực tiếp nhưng lý do khác nhau. Câu 69 hỏi thay đổi chung trong cách xem; câu 70 hỏi lý do riêng của mỗi tác giả.</td></tr></tbody></table>
+<article class="structure-example">
+  <header class="structure-heading">
+    <h3>Diễn dịch kết hợp phản biện</h3>
+    <a href="exams/Dokkai-N2-2015-12.html#bai-10">T12/2015 · Bài 10 · PDF tr. 14–15</a>
+  </header>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">小説家になりたい人には<mark>「好きな作家のものを全部読む」</mark>という読書法をすすめる。</p>
+    <p class="structure-note"><strong>Luận điểm</strong> Lời khuyên được đặt ngay đầu bài. Người muốn viết tiểu thuyết nên đọc hết tác phẩm của một tác giả mình yêu thích.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">ひとりの作家(あなたにとって、不思議に肌合いがよくて楽しめる小説を書く人)の全小説を読んでみるのは、知らず知らずのうちに、その作家の<mark>「小説作法」を感じ取る</mark>ことである。</p>
+    <p class="structure-note"><strong>Lý do</strong> Đọc nhiều tác phẩm của cùng một người giúp dần nhận ra cách họ dựng truyện và thể hiện tâm lý nhân vật.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja"><mark>こう反論する人がいるかもしれない</mark>｡</p>
+    <p class="structure-note"><strong>Tín hiệu phản biện</strong> Tác giả đưa vào một ý kiến có thể gặp khi đề xuất học theo người khác.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">それなのに、他人の作品をマネているのでは、<mark>自分の表現にはならないのではないか</mark>。</p>
+    <p class="structure-note"><strong>Phản biện dự kiến</strong> Người phản đối lo rằng bắt chước người khác sẽ làm mất cơ hội thể hiện giọng văn riêng.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">自己表現欲のことは、<mark>確かにその通り</mark>である。しかし、慌てないで順に段取りを踏んでいこうではないか。</p>
+    <p class="structure-note"><strong>Nhượng bộ</strong> Tác giả công nhận mong muốn thể hiện bản thân. しかし chuyển sang vấn đề nên học theo trình tự nào.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">いきなり自分らしさを出したいと考えるのではなく、<mark>まずは世間が振り向いてくれるレベルのものが書けるよう</mark>、上達する必要があるのだ。</p>
+    <p class="structure-note"><strong>Cách thực hiện</strong> まずは đánh dấu việc làm trước: luyện cho đến khi viết được tác phẩm có thể thu hút người đọc. Giọng văn riêng có thể phát triển sau.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja"><mark>そのための訓練として</mark>、ある作家を熟読しているというのは、大変に有効なのである。</p>
+    <p class="structure-note"><strong>Khẳng định lại luận điểm</strong> そのため nối về mục tiêu nâng trình độ. Đọc kỹ một tác giả chính là cách luyện để đạt mục tiêu ấy.</p>
+  </div>
+</article>
+<article class="structure-example">
+  <header class="structure-heading">
+    <h3>Quy nạp từ trải nghiệm cá nhân</h3>
+    <a href="exams/Dokkai-N2-2010-07.html#bai-8">T7/2010 · Bài 8 · Câu 66–68 · PDF tr. 15–16</a>
+  </header>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja"><mark>転職を考えることがときどきある</mark>。とはいっても、①それほど本気ではない。</p>
+    <p class="structure-note"><strong>Trải nghiệm cá nhân</strong> Tác giả bắt đầu bằng chuyện đôi lúc nghĩ đến đổi nghề. それほど本気ではない cho biết ông chưa thật sự định chuyển.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">ただ、<mark>もし別の仕事を選んでいたら</mark>、自分はどんな人生だったのかを想像してしまう。</p>
+    <p class="structure-note"><strong>Suy xét</strong> Giả định もし～たら mở ra câu hỏi về cuộc đời có thể đã khác thế nào nếu chọn nghề khác.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">昔に比べれば、われわれの<mark>職業選択の幅ははるかに拡がっている</mark>。だけど、これが②自分の仕事だと胸を張って言える人は意外と少ないのではないだろうか。</p>
+    <p class="structure-note"><strong>Mở rộng phạm vi</strong> われわれ mở từ chuyện một người sang tình hình chung. Lựa chọn nghề nhiều hơn nhưng số người tự tin rằng mình đã tìm đúng việc có thể vẫn ít.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja"><mark>誰しも</mark>、自由な職業選択における自分だけの「必然」を求めているのではないだろうか。</p>
+    <p class="structure-note"><strong>Nhận xét khái quát</strong> 誰しも cho thấy kết luận nói về con người nói chung: giữa nhiều lựa chọn, ai cũng muốn tìm công việc có ý nghĩa riêng với mình.</p>
+  </div>
+</article>
+<article class="structure-example">
+  <header class="structure-heading">
+    <h3>Tổng–phân–hợp</h3>
+    <a href="exams/Dokkai-N2-2019-07.html#bai-10">T7/2019 · Bài 10 · Câu 69–71 · PDF tr. 18–19</a>
+  </header>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">理想的なのは、<mark>部下の実力よりも少し上のレベルの仕事</mark>——部下が何とか自分の力で判断・実行することができ、ときには小さな失敗を招くであろうレベルの仕事を任せることだ。</p>
+    <p class="structure-note"><strong>Quan điểm mở đầu</strong> Tác giả đề xuất giao việc nhỉnh hơn năng lực hiện tại để cấp dưới có cơ hội tự quyết định và thực hiện.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">ところが、そのような仕事を部下に与えたとしても、日本の会社では、「ホウ・レン・ソウ」（報告・連絡・相談)などといって、<mark>上司がいちいち部下の仕事に干渉しがちだ</mark>。</p>
+    <p class="structure-note"><strong>Vấn đề</strong> ところが chuyển sang trở ngại. Cấp trên giao việc khó nhưng lại can thiệp vào từng bước.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">たとえば、あるプレゼン資料を部下につくらせるとする。日本の会社の多くの上司は、<mark>全体像を示さず</mark>、ただ「こういうものをつくれ」と部下に曖昧に命じ、持ってこさせる。</p>
+    <p class="structure-note"><strong>Ví dụ</strong> Ví dụ làm tài liệu thuyết trình cho thấy vấn đề cụ thể: cấp dưới phải sửa theo chỉ đạo mà thiếu thông tin để tự phán đoán cách làm.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">そうではなく、「この資料は、こういう目的で、こういう相手に対して、このように説得するために使用するものだ」という<mark>全体像を事前に明確に説明すべきだ</mark>。</p>
+    <p class="structure-note"><strong>Cách thực hiện</strong> Nêu trước mục đích, đối tượng và cách sử dụng tài liệu. Cấp dưới cần hiểu bức tranh chung để tự chọn cách làm.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">部下を育てるのは「仕事」そのものであり、その仕事をするための<mark>「場を与える」のが上司の役目</mark>なのである。</p>
+    <p class="structure-note"><strong>Tổng hợp</strong> Kết bài mở rộng từ cách giao việc thành vai trò của cấp trên: tạo điều kiện để cấp dưới trưởng thành qua công việc.</p>
+  </div>
+</article>
+<article class="structure-example">
+  <header class="structure-heading">
+    <h3>Phễu từ rộng đến hẹp</h3>
+    <a href="exams/Dokkai-N2-2011-12.html#bai-10">T12/2011 · Bài 10 · PDF tr. 17–18</a>
+  </header>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">世界はそれ自身では主張を持たないから、ぼくたちは小説を<mark>「自由」に解釈できる</mark>。それが小説を読む楽しみだ｡</p>
+    <p class="structure-note"><strong>Chủ đề ban đầu</strong> Bài bắt đầu từ cách đọc tiểu thuyết. Tác giả coi quyền tự do diễn giải là điều thú vị.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja"><mark>ところが、評論はそうではない</mark>。古典的名著ともなれば評論でもさまざまな解釈が競われることがあるが、ふつうは評論の主張ははっきりしている。</p>
+    <p class="structure-note"><strong>Thu hẹp sang bình luận</strong> ところが đổi đối tượng sang bài bình luận. Thể loại này thường có lập trường rõ mà người đọc cần nhận ra.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">では、ぼくたちは<mark>なぜ評論を読むのか</mark>と言えば、それは自分の知らないことやわからないことを、知りたいしわかりたいからだ。</p>
+    <p class="structure-note"><strong>Lý do đọc</strong> Từ sự khác nhau giữa hai thể loại, tác giả thu hẹp tiếp vào mục đích đọc bình luận: tìm hiểu những điều mình chưa biết.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">ぼくは「教養」という言葉を<mark>二つの意味</mark>でとらえている。一つは知識の量で、これは多ければ多いほどいい｡</p>
+    <p class="structure-note"><strong>Hai nghĩa của 教養</strong> Nghĩa thứ nhất nói về lượng kiến thức. Lời chuyển sang nghĩa thứ hai mới dẫn tới phần giải thích 教養 hiện đại.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">ぼくは、<mark>その時代に必要な思考方法を身につけること</mark>を第二の教養、そして現代の教養と呼んでおきたい。</p>
+    <p class="structure-note"><strong>Trọng tâm cuối bài</strong> Đây là định nghĩa cần tìm khi câu hỏi nhắc 第二の教養: nắm được phương pháp tư duy cần cho thời đại mình sống.</p>
+  </div>
+</article>
+<article class="structure-example">
+  <header class="structure-heading">
+    <h3>Lật lại quan niệm thông thường</h3>
+    <a href="exams/Dokkai-N2-2024-12.html#bai-6">T12/2024 · Bài 6 · Câu 57–58 · PDF tr. 17–18</a>
+  </header>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">こちらは少々なことで気持ちが揺れ動いているように思え、<mark>いつでも平常心で行動できれば</mark>と考える。</p>
+    <p class="structure-note"><strong>Quan niệm ban đầu</strong> Trước môi trường mới, giữ bình tĩnh mọi lúc có vẻ là điều đáng mong muốn.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">しかし新しい環境で不安を感じないというのは、<mark>必ずしも良いことではない</mark>。</p>
+    <p class="structure-note"><strong>Đảo chiều</strong> しかし báo hiệu đổi hướng. 必ずしも～ない giới hạn lời nhận xét: không lo lắng chưa chắc đã tốt.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">私たちは<mark>不安を感じるからこそ</mark>、良くない事態に備えて準備しようと考える。緊張するからこそ、集中して、しかも慎重に問題に対応できる。</p>
+    <p class="structure-note"><strong>Lý do</strong> からこそ nhấn mạnh tác dụng của cảm xúc: lo lắng thúc đẩy chuẩn bị, căng thẳng giúp tập trung và xử lý cẩn thận.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">不安や緊張を感じたときは、そのような気持ちを感じられる自分のこころの力を信じて、あれこれ考えすぎずに<mark>今自分にできることに集中する</mark>ようにしてほしい。</p>
+    <p class="structure-note"><strong>Cách ứng xử</strong> Lời khuyên hướng vào việc làm được ngay: chấp nhận cảm xúc và tập trung vào hành động trong tầm tay.</p>
+  </div>
+</article>
+<article class="structure-example">
+  <header class="structure-heading">
+    <h3>Vấn đề → cơ chế → giải pháp</h3>
+    <a href="exams/Dokkai-N2-2013-12.html#bai-8">T12/2013 · Bài 8 · Câu 66–68 · PDF tr. 13</a>
+  </header>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">暑い夏、外を歩くと汗が出る。<mark>汗を止めるために冷房のきいた部屋に入る</mark>。誰もがしがちな行動だが、実は、私たちの体にとっては①良いことではない。</p>
+    <p class="structure-note"><strong>Vấn đề</strong> Tác giả mở bằng thói quen vào phòng lạnh để ngừng đổ mồ hôi rồi đặt vấn đề về ảnh hưởng của thói quen ấy.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">冷房を多用するなどして汗を出さないでいると、<mark>さらに休む汗腺が増えていく</mark>。</p>
+    <p class="structure-note"><strong>Cơ chế</strong> Theo lập luận của bài, thường xuyên ngăn cơ thể tiết mồ hôi khiến số tuyến không hoạt động tăng lên.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">その時にもし冷房のきいた部屋に入り<mark>②汗腺が50か所しか働かなくなれば</mark>、一カ所当たり1ccの処理のはずが、2倍の2ccの処理になる。</p>
+    <p class="structure-note"><strong>Ví dụ</strong> Con số minh họa giúp thấy quan hệ nhân quả: nếu số tuyến hoạt động giảm một nửa mà lượng mồ hôi giữ nguyên, tải mỗi tuyến tăng gấp đôi.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">このような汗はべたべたとしており、<mark>蒸発しにくく</mark>、「蒸発することで体温調節をする」という汗の役割をうまく果たせない。</p>
+    <p class="structure-note"><strong>Hệ quả</strong> Mồ hôi khó bay hơi khiến việc điều hòa thân nhiệt kém hiệu quả. Đây là hệ quả, còn tuyến nghỉ tăng nằm ở bước cơ chế.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">休む汗腺を増やさないためには、日ごろから汗が出る時には<mark>そのまま出す</mark>という生活をしたほうがいい。</p>
+    <p class="structure-note"><strong>Giải pháp trong bài</strong> ためには nêu mục tiêu, ほうがいい nêu lời khuyên của tác giả. Khi cơ thể cần tiết mồ hôi thì để quá trình đó diễn ra.</p>
+  </div>
+</article>
+<article class="structure-example">
+  <header class="structure-heading">
+    <h3>So sánh hai quan điểm A và B</h3>
+    <a href="exams/Dokkai-N2-2017-07.html#bai-9">T7/2017 · Bài 9 · Câu 69–70 · PDF tr. 13</a>
+  </header>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">かつては、演劇の公演は生で鑑賞することが一般的だったが、最近は、<mark>自宅で公演のビデオやDVDを鑑賞する人が増えている</mark>。</p>
+    <p class="structure-note"><strong>Bối cảnh chung · A</strong> A ghi nhận sự thay đổi trong cách xem: nhiều người chuyển sang xem bản ghi tại nhà.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">しかし、生の公演を鑑賞することの良さの一つに、<mark>自分の視点で楽しめる</mark>ということがある。</p>
+    <p class="structure-note"><strong>Lý do riêng · A</strong> A thích xem trực tiếp vì có thể tự chọn điểm nhìn, chẳng hạn theo dõi diễn viên mình yêu thích.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">最近は、多くの公演がインターネットやDVDなどで<mark>自宅でも鑑賞できる</mark>ようになった。自宅で鑑賞するほうが楽だと言って、生の公演を鑑賞しない人も増えている。</p>
+    <p class="structure-note"><strong>Bối cảnh chung · B</strong> B cũng ghi nhận xu hướng xem tại nhà. Dùng câu này cùng đoạn mở của A để trả lời câu hỏi về thay đổi chung.</p>
+  </div>
+  <div class="structure-segment">
+    <p class="structure-excerpt" lang="ja">しかし自宅での鑑賞では、演技の素晴らしさは分かっても、<mark>会場の一体感は感じられない</mark>。</p>
+    <p class="structure-note"><strong>Lý do riêng · B</strong> B thích cảm giác diễn viên và khán giả hòa làm một tại sân khấu. Cả hai thích xem trực tiếp, mỗi người vì một lý do.</p>
+  </div>
+</article>
 </section>
 <section class="tips-section" id="dang-cau-hoi">
 <h2>Dạng câu hỏi</h2>
