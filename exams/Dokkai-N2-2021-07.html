@@ -226,7 +226,7 @@ h3{font-size:17px;margin:16px 0 10px;color:var(--green)}.passage p{margin:0 0 15
 .q60-note{margin:0;padding:7px 10px;border-left:3px solid #d6a72f;background:#fff8de;font-size:13px;line-height:1.5}
 .q60-note strong,.q60-note b{margin-right:6px}
 .q60-note span{display:block}
-@media screen{[data-pencil-key="Dokkai-N2-2021-07:bai-7"]:has(.q60-toggle[aria-expanded="true"])>.pencil-palette{display:none}}
+@media screen{#solution-60 .print-only{display:none!important}[data-pencil-key="Dokkai-N2-2021-07:bai-7"]:has(.q60-toggle[aria-expanded="true"])>.pencil-palette{display:none}}
 @media print {
  [data-pencil-key="Dokkai-N2-2021-07:bai-7"] > .pencil-surface[hidden]{display:block}
 }
@@ -236,7 +236,7 @@ h3{font-size:17px;margin:16px 0 10px;color:var(--green)}.passage p{margin:0 0 15
 <p>Nếu chọn cụm lặp, xác suất chọn đúng là <strong>50%</strong>.</p>
 <h4>Chữa bằng ngữ pháp và ngữ cảnh</h4>
 <p class="answer-line">Đáp án 1</p>
-<p class="no-print"><a href="#chu-giai-cau-60" id="q60-show-in-reading">Xem ghi chú trong đoạn đọc</a></p><div class="print-only"><p><strong lang="ja">～ようになって以来</strong> đặt mốc thời gian “kể từ khi việc tôn trọng cá tính bắt đầu được chú ý”. Vế chính là <strong lang="ja">「…」という解釈が広がりました</strong>, tức cách hiểu “cứ để trẻ làm điều mình thích” đã lan rộng. Câu sau mở bằng <strong lang="ja">しかしその結果</strong> (tuy nhiên, hệ quả là…), nối cách hiểu đó với hai hệ quả: giáo viên mất cơ hội dạy nề nếp và trẻ chỉ muốn làm điều mình thích. Ngay sau đó, tác giả giải thích <span lang="ja">個性の重視</span> là thừa nhận mỗi người khác nhau và có thể có sở thích, giá trị khác nhau. Từ cách nối câu và định nghĩa này, ta xác định tác giả đang phê phán <strong>cách hiểu sai</strong>.</p>
+<p class="no-print"><a href="#chu-giai-cau-60" id="q60-show-in-reading">Xem ghi chú trong đoạn đọc</a></p><div id="q60-review-annotations" class="no-print"></div><div class="print-only"><p><strong lang="ja">～ようになって以来</strong> đặt mốc thời gian “kể từ khi việc tôn trọng cá tính bắt đầu được chú ý”. Vế chính là <strong lang="ja">「…」という解釈が広がりました</strong>, tức cách hiểu “cứ để trẻ làm điều mình thích” đã lan rộng. Câu sau mở bằng <strong lang="ja">しかしその結果</strong> (tuy nhiên, hệ quả là…), nối cách hiểu đó với hai hệ quả: giáo viên mất cơ hội dạy nề nếp và trẻ chỉ muốn làm điều mình thích. Ngay sau đó, tác giả giải thích <span lang="ja">個性の重視</span> là thừa nhận mỗi người khác nhau và có thể có sở thích, giá trị khác nhau. Từ cách nối câu và định nghĩa này, ta xác định tác giả đang phê phán <strong>cách hiểu sai</strong>.</p>
 <ol class="reject">
 <li><strong>Đúng.</strong> <span lang="ja">間違って解釈されている</span> nghĩa là “đang bị hiểu sai”. Đây là nguyên nhân khớp với cách hiểu đã lan rộng và hệ quả mà tác giả nêu.</li>
 <li><strong>Sai.</strong> <span lang="ja">注目されている</span> là “được chú ý”. Bài dùng thông tin này để đặt mốc thời gian bằng <span lang="ja">以来</span>. Nguyên nhân nằm ở cách mọi người diễn giải khái niệm sau đó.</li>
@@ -637,11 +637,26 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
   const notes = document.getElementById('q60-annotations');
   const original = toggle.nextElementSibling;
   const image = original.querySelector('img');
+  const solution = document.getElementById('solution-60');
+  const review = document.getElementById('q60-review-annotations');
   let loaded = false;
+
+  function appendScanImages(container) {
+    for (const strip of container.querySelectorAll('img')) strip.src = image.src;
+  }
+
+  function showReview() {
+    if (!solution.open || review.firstElementChild) return;
+    const copy = notes.cloneNode(true);
+    copy.removeAttribute('id');
+    copy.hidden = false;
+    appendScanImages(copy);
+    review.append(copy);
+  }
 
   function showNotes(open) {
     if (open && !loaded) {
-      for (const strip of notes.querySelectorAll('img')) strip.src = image.src;
+      appendScanImages(notes);
       loaded = true;
     }
     toggle.setAttribute('aria-expanded', String(open));
@@ -652,6 +667,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
 
   toggle.addEventListener('click', () => showNotes(notes.hidden));
   document.getElementById('q60-show-in-reading').addEventListener('click', () => showNotes(true));
+  solution.addEventListener('toggle', showReview);
   if (location.hash === '#chu-giai-cau-60') showNotes(true);
+  if (location.hash === '#solution-60') {
+    solution.open = true;
+    showReview();
+  }
 })();
 </script></body></html>
