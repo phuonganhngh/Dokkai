@@ -70,7 +70,7 @@ HTML trên GitHub có thể hiện mã nguồn; nên dùng gói ZIP để mở b
 
 - Đề N2 và bảng đáp án do người học cung cấp. Mỗi kỳ dẫn đúng tên file và trang PDF.
 - `Riki_1-928.xlsx`: mục từ được dẫn bằng sheet, STT và dòng Excel.
-- `DUNGMORI N2.apkg`: mục từ được dẫn bằng mã note ID; nội dung gốc có trong phần tra ngược của HTML.
+- `DUNGMORI N2.apkg`: mục từ được dẫn bằng mã note ID.
 - `Bí kíp N1.pdf`, `Bí kíp N2.pdf`: phương pháp được dẫn bằng trang PDF và trang in trong sách, với cách áp dụng cụ thể vào từng bài.
 - Bảng/sơ đồ giữ ảnh gốc; lỗi gõ và số câu không nhất quán được ghi chú khi ảnh hưởng đối chiếu. Đề 7/2023 ghi trùng số hai câu thông tin cuối, được định vị là 70–71 theo bảng đáp án.
 
@@ -84,6 +84,6 @@ Lời giải và tiêu đề chủ đề là phần biên soạn; nghĩa bổ su
 
 Đã có trang chủ `index.html` liên kết đủ 31 đề. Để kích hoạt GitHub Pages lần đầu, chủ kho mở **Settings → Pages → Build and deployment**, chọn **Deploy from a branch**, nhánh **main**, thư mục **/ (root)** rồi bấm **Save**.
 
-Sau khi GitHub báo triển khai thành công, trang học sẽ ở **https://phuonganhngh.github.io/Dokkai/**. Bấm **Học ngay** để mở HTML tương tác; không cần tải ZIP. Bản ZIP vẫn dùng để học khi không có mạng.
+Sau khi GitHub báo triển khai thành công, trang học sẽ ở **https://phuonganhngh.github.io/Dokkai/**. Bấm vào kỳ thi để mở HTML tương tác; không cần tải ZIP. Bản ZIP vẫn dùng để học khi không có mạng.
 
 Việc thêm trang chủ chưa tự bật GitHub Pages; cần hoàn tất cài đặt trên trước khi dùng địa chỉ này.
