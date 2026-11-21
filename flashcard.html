@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcard · Dokkai</title>
+<style>
+:root { color-scheme: light; --ink: #183532; --green: #18685b; --paper: #fffdf8; --line: #d9dccc; --muted: #526a61; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f5ed; color: var(--ink); font: 16px/1.6 system-ui, sans-serif; }
+main { width: min(100%, 780px); margin: auto; padding: 18px clamp(16px, 5vw, 36px) 54px; }
+nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 6px 15px; border-radius: 6px; border: 1px solid #cddbd5; background: white; color: var(--green); text-decoration: none; font-weight: 650; }
+nav [aria-current] { background: var(--green); border-color: var(--green); color: white; }
+h1 { font-size: clamp(28px, 5vw, 38px); line-height: 1.15; margin: 0 0 7px; }
+h2 { margin: 0; }
+p { margin: 0; }
+a { color: var(--green); }
+:focus-visible { outline: 3px solid #936719; outline-offset: 3px; }
+[hidden] { display: none !important; }
+.counts { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+.study-card, .empty-state { border: 1px solid var(--line); border-radius: 13px; padding: clamp(16px, 4.5vw, 32px); background: var(--paper); }
+.study-card { display: grid; gap: 18px; text-align: center; }
+.card-word { font: 650 clamp(36px, 9vw, 58px)/1.25 "Hiragino Sans", "Yu Gothic", "Noto Sans CJK JP", sans-serif; overflow-wrap: anywhere; }
+.card-back { border-top: 1px solid var(--line); padding-top: 14px; }
+.card-reading { color: var(--muted); }
+.card-meaning { font-weight: 650; font-size: 19px; overflow-wrap: anywhere; }
+.card-back a { display: inline-block; margin-top: 8px; font-size: 13px; }
+button { min-height: 44px; padding: 8px; border: 1px solid #c8d8cf; border-radius: 7px; background: white; color: var(--ink); font: inherit; cursor: pointer; }
+#show-answer { justify-self: center; padding-inline: 20px; border-color: var(--green); background: var(--green); color: white; font-weight: 650; }
+.grades { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.grades button { min-height: 58px; font-size: clamp(12px, 2.9vw, 15px); line-height: 1.35; background: #f4f8f4; }
+.grades button[data-grade="again"] { color: #913226; background: #fff6f1; border-color: #e5cbba; }
+.grades small { display: block; font-size: 11px; margin-top: 3px; color: var(--muted); }
+.empty-state h2 { font-size: 19px; }
+.empty-state p { margin-top: 6px; }
+#storage-status { color: #913226; margin-top: 10px; font-size: 14px; }
+#storage-status:empty { display: none; }
+</style>
+<script type="module" src="assets/flashcard-study.js"></script>
+</head>
+<body>
+<main>
+  <nav aria-label="Dokkai">
+    <a href="https://phuonganhngh.github.io/Dokkai/">HOME</a>
+    <a href="bi-kip.html">Bí kíp</a>
+    <a href="flashcard.html" aria-current="page">Flashcard</a>
+  </nav>
+  <h1>Flashcard</h1>
+  <p class="counts" id="card-counts" aria-live="polite" hidden></p>
+  <section class="study-card" id="study-card" aria-label="Thẻ đang ôn" hidden>
+    <h2 class="card-word" id="card-word" lang="ja"></h2>
+    <button type="button" id="show-answer">Hiện đáp án</button>
+    <div id="card-back" class="card-back" hidden>
+      <p class="card-reading" id="card-reading" lang="ja"></p>
+      <p class="card-meaning" id="card-meaning"></p>
+      <a id="card-source" hidden>Mở bài gốc</a>
+    </div>
+    <div class="grades" id="grades" role="group" aria-label="Chọn mức độ nhớ" hidden>
+      <button type="button" data-grade="again">Ôn lại<small></small></button>
+      <button type="button" data-grade="hard">Khó<small></small></button>
+      <button type="button" data-grade="good">Tốt<small></small></button>
+      <button type="button" data-grade="easy">Dễ<small></small></button>
+    </div>
+  </section>
+  <section class="empty-state" id="empty-state" hidden>
+    <h2 id="empty-title"></h2>
+    <p id="empty-detail"></p>
+    <p><a id="open-exams" href="./#danh-sach-de">Chọn đề để học từ mới</a></p>
+  </section>
+  <p role="status" id="storage-status"></p>
+</main>
+</body>
+</html>

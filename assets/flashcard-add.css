@@ -1,0 +1,34 @@
+.flashcard-add {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-top: 6px;
+  font-size: 12px;
+}
+.flashcard-add button,
+.flashcard-add a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 8px;
+  color: #1a6557;
+  font: inherit;
+  font-weight: 650;
+}
+.flashcard-add button {
+  border: 1px solid #b3cfbf;
+  border-radius: 5px;
+  background: #f0f6ec;
+  text-align: start;
+  cursor: pointer;
+}
+.flashcard-add a {
+  padding-left: 0;
+}
+.flashcard-add :focus-visible {
+  outline: 2px solid #167569;
+  outline-offset: 2px;
+}
+.flashcard-add [hidden] { display: none; }
+.flashcard-add [role="status"]:empty { display: none; }
