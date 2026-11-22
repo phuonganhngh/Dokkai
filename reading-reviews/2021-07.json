@@ -1,0 +1,60 @@
+{
+  "61": {
+    "choices": [
+      {"translation": "Để từng em tự do làm điều mình muốn.", "evidence": ["let-them"], "reason": "Đây là cách hiểu từng lan rộng. Tác giả nêu hệ quả của cách hiểu ấy rồi đưa ra định nghĩa của mình."},
+      {"translation": "Coi trọng hứng thú và giá trị quan riêng của từng em.", "evidence": ["individual-interests", "natural"], "reason": "Tác giả khẳng định mỗi người có hứng thú và giá trị quan riêng là điều tự nhiên. Từ việc thừa nhận sự khác biệt ấy, có thể hiểu vì sao phương án 2 diễn đạt đúng ý tác giả."},
+      {"translation": "Đánh giá cao những điểm mà một người vượt trội so với người khác.", "evidence": ["individual-interests", "natural"], "reason": "Tác giả thừa nhận mọi người khác nhau. Phương án tự thêm thước đo vượt trội hơn người khác."},
+      {"translation": "Cho rằng càng khác biệt với người khác thì càng tốt.", "evidence": ["individual-interests", "natural"], "reason": "Tác giả chấp nhận sự khác biệt vốn có. Phương án tự thêm đánh giá rằng mức độ khác biệt càng lớn thì càng tốt."}
+    ],
+    "groups": [
+      {
+        "page": 0, "rows": [10, 37],
+        "text": "個性の重視ということが注目されるようになって以来、「子供の興味を尊重し、一人ひと"
+      },
+      {
+        "page": 0, "rows": [37, 158],
+        "text": "りの子供が興味を持つこと、「やってみたい」ということを好きにやらせることが、個性の重視である」という解釈が広がりました。しかしその結果、社会生活上のしきたり（注1）や習慣を教える機会を失ったと悩む教師と、好きなことしかやりたがらない子供をつくってしまったということはないでしょうか。個性の重視とは、「二人と同じ人間はいない、つまり人は一",
+        "marks": [
+          {"id": "let-them", "phrase": "好きにやらせること", "tone": "meaning", "note": "Để trẻ làm điều mình thích.", "boxes": [[448, 42, 587, 65]]}
+        ]
+      },
+      {
+        "page": 0, "rows": [158, 218],
+        "text": "人一人異なる存在である。だから、一人一人が異なった興味や価値観を持つのは当然である」という考え方を肯定する人間観を意味しているのです。（中略）",
+        "marks": [
+          {"id": "individual-interests", "phrase": "一人一人が異なった興味や価値観を持つ", "tone": "meaning", "note": "Mỗi người có hứng thú và giá trị quan khác nhau.", "boxes": [[278, 161, 567, 185]]},
+          {"id": "natural", "phrase": "のは当然である", "tone": "grammar", "note": "「～のは当然である」 cho thấy tác giả xem sự khác biệt ấy là điều tự nhiên.", "boxes": [[567, 161, 666, 185]]}
+        ]
+      }
+    ]
+  },
+  "62": {
+    "choices": [
+      {"translation": "Vì hứng thú và mối quan tâm của trẻ dễ thay đổi nên cần chú ý kỹ và coi trọng chúng.", "evidence": ["changing"], "reason": "Đây là nhận xét mở đoạn về khả năng thay đổi. Phương án tự thêm lời khuyên phải theo dõi sát và đặc biệt coi trọng các sở thích đó."},
+      {"translation": "Điều quan trọng là tạo cơ hội trải nghiệm đa dạng để mở rộng hứng thú và mối quan tâm của trẻ.", "evidence": ["waiting", "more-than", "purpose", "experiences", "make-possible", "important"], "reason": "Tác giả nói trẻ khó có hứng thú với điều chưa biết. Vì vậy, cần chủ động mở rộng cơ hội trải nghiệm để trẻ hình thành mối quan tâm mới."},
+      {"translation": "Nên tôn trọng tính tự chủ của trẻ và chờ trẻ tự tìm ra những hứng thú, mối quan tâm mới.", "evidence": ["more-than", "experiences"], "reason": "Tác giả chấp nhận trẻ có thể tự khám phá, đồng thời nói chờ thôi là chưa đủ. Phương án bỏ mất việc chủ động tạo thêm trải nghiệm."},
+      {"translation": "Nên chú ý đến những hứng thú và mối quan tâm mà trẻ tự tìm thấy, rồi cho trẻ tập trung trải nghiệm những điều đó.", "evidence": ["experiences", "important"], "reason": "Tác giả muốn tạo cơ hội để trẻ gặp nhiều điều mới. Phương án thu hẹp trải nghiệm vào những sở thích trẻ đã tìm thấy."}
+    ],
+    "groups": [
+      {
+        "page": 0, "rows": [218, 310],
+        "text": "子供の興味や関心は日々変化する可能性があります。しかし、なんらかの（注2）形でその対象を知る機会がなかったなら、興味を持つこともないのです。小学生はまだまだ経験の幅が狭いものです。ですから、おのずと（注3）興味や関心を持つ対象も、非常に限られた範囲のも",
+        "marks": [
+          {"id": "changing", "phrase": "子供の興味や関心は日々変化する可能性があります", "tone": "meaning", "note": "Hứng thú và mối quan tâm của trẻ có thể thay đổi từng ngày.", "boxes": [[36, 221, 411, 245]]}
+        ]
+      },
+      {
+        "page": 0, "rows": [310, 370],
+        "text": "のになります。さまざまなものに興味を持つのを待つばかりでなく、興味が持てるように、さまざまな体験ができるようにすることが大切です。",
+        "marks": [
+          {"id": "waiting", "phrase": "さまざまなものに興味を持つのを待つ", "tone": "meaning", "note": "Chờ trẻ nảy sinh hứng thú với nhiều thứ khác nhau.", "boxes": [[133, 313, 416, 336]]},
+          {"id": "more-than", "phrase": "ばかりでなく", "tone": "grammar", "note": "「～ばかりでなく」 nghĩa là không chỉ làm bước đầu. Trong câu này, chỉ chờ đợi thì chưa đủ.", "boxes": [[416, 313, 493, 336]]},
+          {"id": "purpose", "phrase": "興味が持てるように", "tone": "meaning", "note": "Để trẻ có thể nảy sinh hứng thú.", "boxes": [[508, 313, 648, 336]]},
+          {"id": "experiences", "phrase": "さまざまな体験ができる", "tone": "meaning", "note": "Trẻ có thể trải nghiệm nhiều điều khác nhau.", "boxes": [[22, 342, 196, 365]]},
+          {"id": "make-possible", "phrase": "ようにする", "tone": "grammar", "note": "「～ようにする」 nhấn vào việc chủ động tạo điều kiện cho trẻ có những trải nghiệm đó.", "boxes": [[196, 342, 271, 365]]},
+          {"id": "important", "phrase": "ことが大切です", "tone": "tip", "note": "「～ことが大切です」 đánh dấu lời khuyên chính. Hãy đọc ngược về hành động được nhấn mạnh là tạo cơ hội trải nghiệm.", "boxes": [[271, 342, 379, 365]]}
+        ]
+      }
+    ]
+  }
+}
