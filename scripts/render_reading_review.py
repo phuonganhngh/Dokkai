@@ -17,6 +17,8 @@ REVIEW_STYLE = """
 .solution .review-evidence-caption { padding-block: 3px 6px; }
 .solution .review-evidence-caption > span { display: inline; }
 .review-evidence-caption > span + span::before { content: " "; }
+.review-reference { margin-inline-start: .45em; color: #126c60; }
+.solution .review-strip .scan-frame-cover { opacity: 1; mix-blend-mode: normal; fill: #fff; }
 .review-quote mark[data-tone] { color: inherit; }
 .review-quote mark[data-tone="meaning"] { background: #dfedd4; }
 .review-quote mark[data-tone="grammar"] { background: #d0edf8; }
@@ -87,6 +89,11 @@ def render_question(number, spec, article):
                 if any(intersect(box, other) for other in used_bounds[page]):
                     raise ValueError(f"Question {number}: {key} overlaps another highlight")
                 used_bounds[page].append(box)
+        for left, top, right, bottom in group.get("frame", ()):
+            if not (0 <= left < right <= width and start <= top < bottom <= stop):
+                raise ValueError(f"Question {number}: frame mask extends outside its excerpt")
+            if any(intersect((left, top, right, bottom), box) for box in used_bounds[page]):
+                raise ValueError(f"Question {number}: frame mask obscures a highlight")
 
     for choice, note in enumerate(notes, 1):
         references = note["evidence"]
@@ -145,12 +152,20 @@ def render_question(number, spec, article):
             printed.append(f'<mark data-tone="{mark["tone"]}">{escape(mark["phrase"])}</mark>')
             cursor = offset + len(mark["phrase"])
         printed.append(escape(source[cursor:]))
+        frame = "".join(
+            f"M{left} {top-start}h{right-left}v{bottom-top}h-{right-left}Z"
+            for left, top, right, bottom in group.get("frame", ())
+        )
+        frame_cover = (
+            f'<svg class="scan-frame-cover" viewBox="0 0 {width} {stop-start}" aria-hidden="true">'
+            f'<path d="{frame}"/></svg>' if frame else ""
+        )
         return (
             caption +
             f'<div class="review-strip no-print" data-page="{page}" '
             f'style="--ratio:{width} / {stop-start};--shift:{-100*start/height:.6f}%">'
             f'<img alt=""><svg viewBox="0 0 {width} {stop-start}" aria-hidden="true">'
-            f'{"".join(rects)}</svg></div>'
+            f'{"".join(rects)}</svg>{frame_cover}</div>'
             f'<p class="review-quote" lang="ja">{"".join(printed)}</p>'
         )
 
@@ -176,7 +191,7 @@ def replace_review(page, specs):
             return match[0]
         article = articles[int(number)]
         solution = match[0]
-        beginning = re.search(r'<div class="review-evidence">|<div class="review-ordered-notes">', solution)
+        beginning = re.search(r'<div class="(?:review-evidence|review-ordered-notes|q60-map)"', solution)
         start = beginning.start() if beginning else solution.rindex("</details>")
         end = solution.find("<h4>Áp dụng Bí kíp</h4>", start)
         if end < 0:
