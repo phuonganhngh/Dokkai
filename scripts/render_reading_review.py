@@ -31,24 +31,19 @@ def intersect(a, b):
     return a[0] < b[2] and b[0] < a[2] and a[1] < b[3] and b[1] < a[3]
 
 
-def group_choices(groups, notes, locations):
-    notes_by_group = defaultdict(list)
-    for number, note in enumerate(notes, 1):
-        notes_by_group[locations[note["evidence"][0]]].append((number, note))
+def supplementary_refs(references, locations):
+    """Link to one additional citation per distant evidence group."""
+    primary = locations[references[0]]
+    seen = set()
+    for key in references[1:]:
+        location = locations[key]
+        if abs(location - primary) > 1 and location not in seen:
+            seen.add(location)
+            yield key
 
-    # If two choices cite different lines in reverse order, keep the source
-    # lines in reading order and link the ordered explanations to their marks.
-    first = 0
-    seen = 0
-    pending = []
-    for index in range(len(groups)):
-        pending.extend(notes_by_group[index])
-        if any(number > seen + len(pending) for number, _ in pending):
-            continue
-        yield groups[first:index + 1], sorted(pending)
-        first = index + 1
-        seen += len(pending)
-        pending = []
+
+def reference_label(quote):
+    return f"Dẫn chứng bổ sung · {quote}" if quote else "Dẫn chứng bổ sung"
 
 
 def render_question(number, spec, article):
@@ -105,12 +100,13 @@ def render_question(number, spec, article):
     def target(key):
         return f'evidence-{number}-{key}'
 
-    def render_note(choice, note, link):
+    def render_note(choice, note):
         status = "đúng" if choice == answer else "sai"
         references = note["evidence"]
-        anchor = (
-            f' <a class="review-reference no-print" href="#{target(references[0])}">Dẫn chứng</a>'
-            if link else ""
+        anchors = "".join(
+            f' <a class="review-reference no-print" href="#{escape(target(key), quote=True)}">'
+            f'{escape(reference_label(evidence[key]["phrase"]))}</a>'
+            for key in supplementary_refs(references, locations)
         )
         return (
             f'<p class="review-note" data-choice="{choice}" data-verdict="{status}" '
@@ -118,7 +114,7 @@ def render_question(number, spec, article):
             f'<span class="review-option"><strong>{choice}.</strong> '
             f'<span lang="ja">{escape(choices[choice - 1])}</span> '
             f'<span class="review-translation">{escape(note["translation"])}</span></span>'
-            f'<span class="review-explanation">{escape(note["reason"])}{anchor}</span></p>'
+            f'<span class="review-explanation">{escape(note["reason"])}{anchors}</span></p>'
         )
 
     def render_group(group):
@@ -169,14 +165,13 @@ def render_question(number, spec, article):
             f'<p class="review-quote" lang="ja">{"".join(printed)}</p>'
         )
 
-    result = []
-    for groups, ordered_notes in group_choices(spec["groups"], notes, locations):
-        expl = "".join(render_note(choice, note, len(groups) > 1) for choice, note in ordered_notes)
-        if len(groups) == 1:
-            result.append(f'<div class="review-evidence">{expl}{render_group(groups[0])}</div>')
-        else:
-            result.append(f'<div class="review-ordered-notes">{expl}</div>')
-            result.extend(f'<div class="review-evidence">{render_group(group)}</div>' for group in groups)
+    notes_by_group = defaultdict(list)
+    for choice, note in enumerate(notes, 1):
+        notes_by_group[locations[note["evidence"][0]]].append(render_note(choice, note))
+    result = [
+        f'<div class="review-evidence">{"".join(notes_by_group[index])}{render_group(group)}</div>'
+        for index, group in enumerate(spec["groups"])
+    ]
     return "\n".join(result) + "\n"
 
 

@@ -90,7 +90,7 @@ Việc thêm trang chủ chưa tự bật GitHub Pages; cần hoàn tất cài �
 
 ## Biên soạn lời giải đọc hiểu
 
-Mỗi câu trong tệp JSON có bốn mục `choices` theo thứ tự đề gốc. Nhập bản dịch, lý do chọn hoặc loại, và mã dẫn chứng cho từng mục. Hai câu T7/2021 có dữ liệu mẫu trong [reading-reviews/2021-07.json](reading-reviews/2021-07.json).
+Mỗi câu trong tệp JSON có bốn mục `choices` theo thứ tự đề gốc. Nhập bản dịch, lý do chọn hoặc loại, và các mã trong `evidence` cho từng mục. Mã đầu tiên xác định đoạn đặt lời giải ngay bên trên. Các mã tiếp theo chỉ tạo link nếu trỏ tới đoạn cách ít nhất một đoạn khác. Hai câu T7/2021 có dữ liệu mẫu trong [reading-reviews/2021-07.json](reading-reviews/2021-07.json).
 
 Khai báo mỗi đoạn ảnh một lần trong `groups`, theo thứ tự trang và dòng. Mỗi vùng tô có một mã, cụm tiếng Nhật trùng với đoạn trích và ghi chú tiếng Việt. Dùng `meaning` cho bản dịch và nội dung dẫn chứng, `grammar` cho cụm ngữ pháp cần giải thích, và `tip` cho dấu hiệu giúp chọn hoặc loại đáp án. Nhiều lựa chọn có thể cùng trỏ tới một mã. Nếu ảnh có viền trang, dùng các ô `frame` để che nét viền ở lề và giữ lại đường kẻ cần đọc trong bảng hoặc sơ đồ.
 
@@ -100,4 +100,4 @@ Dùng Python có cài `lxml` để cập nhật HTML.
 python scripts/render_reading_review.py exams/Dokkai-N2-2021-07.html reading-reviews/2021-07.json
 ```
 
-Trình tạo đọc nguyên văn lựa chọn và đáp án từ đề, kiểm tra vùng tô chồng nhau, rồi đặt ghi chú trên ảnh dẫn chứng. Sau khi đối chiếu ảnh, in PDF từ trang có tham số `?print=1` và cập nhật HTML, PDF trong ZIP của năm tương ứng.
+Trình tạo đọc nguyên văn lựa chọn và đáp án từ đề, kiểm tra vùng tô chồng nhau, rồi đặt ghi chú trên ảnh dẫn chứng. Lời giải đi theo mạch bài đọc và vẫn mang số phương án gốc. Sau khi đối chiếu ảnh, in PDF từ trang có tham số `?print=1` và cập nhật HTML, PDF trong ZIP của năm tương ứng.

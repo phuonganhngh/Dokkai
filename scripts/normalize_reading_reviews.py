@@ -1,4 +1,4 @@
-"""Normalize the order and highlight geometry of published reading reviews."""
+"""Align published reading notes with their evidence and normalize highlights."""
 
 import argparse
 from collections import defaultdict
@@ -7,7 +7,7 @@ import re
 
 from lxml import html
 
-from render_reading_review import SOLUTION, intersect
+from render_reading_review import SOLUTION, intersect, reference_label, supplementary_refs
 
 
 TONES = {"meaning": 0, "grammar": 1, "tip": 2}
@@ -108,35 +108,33 @@ def trim_adjacent_overlap(groups, scan_heights):
             previous = strip, page, top, length
 
 
-def place_ordered_notes(groups, notes_by_group, question):
-    seen = 0
-    pending = []
-    for group in groups:
-        if not pending:
-            first = group
-        pending.extend((group, note) for note in notes_by_group[group])
-        if any(int(note.get("data-choice")) > seen+len(pending) for _, note in pending):
-            continue
-        moved = any(original is not first for original, _ in pending)
-        if moved:
-            summary = html.Element("div", {"class": "review-ordered-notes"})
-            first.addprevious(summary)
-            for original, note in sorted(pending, key=lambda entry: int(entry[1].get("data-choice"))):
-                for prior in note.xpath('.//a[' + CLASS.format("review-reference") + ']'):
-                    prior.getparent().remove(prior)
-                anchor = html.Element("a", href=f'#{original.get("id")}')
-                anchor.set("class", "review-reference no-print")
-                anchor.text = "Dẫn chứng"
-                explanation = note.xpath('./span[@class="review-explanation"]')
-                (explanation[0] if explanation else note).append(anchor)
-                summary.append(note)
-        else:
-            for _, note in reversed(sorted(pending, key=lambda entry: int(entry[1].get("data-choice")))):
-                first.insert(0, note)
-        seen += len(pending)
-        pending = []
-    if pending:
-        raise ValueError(f"Cannot order the explanations for question {question}")
+def place_notes(groups, notes):
+    locations = {
+        node.get("id"): index
+        for index, group in enumerate(groups)
+        for node in group.iter()
+        if node.get("id")
+    }
+    notes_by_group = defaultdict(list)
+    for note in notes:
+        references = note.get("data-evidence").split()
+        notes_by_group[locations[references[0]]].append(note)
+        for prior in note.xpath('.//a[' + CLASS.format("review-reference") + ']'):
+            prior.drop_tree()
+        explanation = note.xpath('./span[@class="review-explanation"]')
+        for key in supplementary_refs(references, locations):
+            source_quotes = groups[locations[key]].xpath('./p[@class="review-quote"]')
+            quote = source_quotes[0].text_content().strip() if source_quotes else ""
+            if len(quote) > 26:
+                quote = quote[:25] + "…"
+            anchor = html.Element("a", href=f"#{key}")
+            anchor.set("class", "review-reference no-print")
+            anchor.text = reference_label(quote)
+            (explanation[-1] if explanation else note).append(anchor)
+    for index, local_notes in notes_by_group.items():
+        group = groups[index]
+        for note in sorted(local_notes, key=lambda entry: int(entry.get("data-choice")), reverse=True):
+            group.insert(0, note)
 
 
 def normalize_review(original, number, scan_heights):
@@ -144,34 +142,37 @@ def normalize_review(original, number, scan_heights):
     model = solution.xpath('./div[@class="q60-map"]')
     container = model[0] if model else solution
     groups = container.xpath('./div[' + CLASS.format("review-evidence") + ']')
-    if not groups or container.xpath('./div[@class="review-ordered-notes"]'):
+    if not groups:
         return original
-    notes_by_group = {group: group.xpath('./p[@data-choice]') for group in groups}
-    notes = [note for group in groups for note in notes_by_group[group]]
+    summaries = container.xpath('./div[@class="review-ordered-notes"]')
+    notes = container.xpath('./div/p[@data-choice]')
     if sorted(int(note.get("data-choice")) for note in notes) != [1, 2, 3, 4]:
         return original
-    if any(note.get("data-evidence") for note in notes):
+    has_references = all(note.get("data-evidence") for note in notes)
+    if has_references and not summaries:
         return original
 
-    trim_adjacent_overlap(groups, scan_heights)
-    for index, group in enumerate(groups, 1):
-        if notes_by_group[group] and not group.get("id"):
-            group.set("id", f'evidence-{number}-line-{index}')
-        for note in notes_by_group[group]:
-            note.set("data-evidence", group.get("id"))
-        partition_rectangles(group, notes_by_group[group])
-    place_ordered_notes(groups, notes_by_group, number)
+    if not has_references:
+        trim_adjacent_overlap(groups, scan_heights)
+        for index, group in enumerate(groups, 1):
+            local_notes = group.xpath('./p[@data-choice]')
+            if local_notes and not group.get("id"):
+                group.set("id", f'evidence-{number}-line-{index}')
+            for note in local_notes:
+                note.set("data-evidence", group.get("id"))
+            partition_rectangles(group, local_notes)
+    place_notes(groups, notes)
+    for summary in summaries:
+        summary.drop_tree()
 
-    first = re.search(r'<div class="(?:review-evidence|q60-map)\b', original).start()
+    first = re.search(r'<div class="(?:review-evidence|review-ordered-notes|q60-map)\b', original).start()
     suffix = original.find("<h4>Áp dụng Bí kíp</h4>", first)
     if suffix < 0:
         suffix = original.rindex("</details>")
     if model:
         updated = source(container)
     else:
-        updated = "\n".join(source(node) for node in solution.xpath(
-            './div[' + CLASS.format("review-evidence") + ' or @class="review-ordered-notes"]'
-        ))
+        updated = "\n".join(source(group) for group in groups)
     updated = updated.replace("viewbox=", "viewBox=")
     updated = re.sub(r"<(rect|path)([^>]*)></\1>", r"<\1\2/>", updated)
     return original[:first] + updated + "\n" + original[suffix:]
